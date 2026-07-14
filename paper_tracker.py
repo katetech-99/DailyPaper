@@ -141,7 +141,7 @@ def get_paper_recommendations():
 def summarize_papers_with_llm(papers):
     """调用大模型进行总结"""
     client = OpenAI(
-        api_key=LLM_API_KEY, base_url="https://api.deepseek.com"
+        api_key=LLM_API_KEY, base_url="https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1"
     )  # deepseek
     # client = OpenAI(
     #     api_key=LLM_API_KEY, base_url="https://api.siliconflow.cn/v1"
@@ -199,7 +199,7 @@ TLDR: {tldr_text or "无"}
 """
 
         response = client.chat.completions.create(
-            model="deepseek-chat",
+            model="qwen3.7-max",
             # model="deepseek-ai/DeepSeek-V3.2",
             messages=[{"role": "user", "content": prompt}],
         )
